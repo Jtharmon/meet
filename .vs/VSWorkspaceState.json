@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\auth-server",
-    "\\public",
-    "\\src"
+    "\\static-site-test"
   ],
-  "SelectedNode": "\\auth-server\\.gitignore",
+  "SelectedNode": "\\static-site-test\\ test-auth-server.html",
   "PreviewInSolutionExplorer": false
 }
