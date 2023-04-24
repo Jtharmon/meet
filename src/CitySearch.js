@@ -1,0 +1,37 @@
+import React, { Component } from 'react';
+
+class CitySearch extends Component {
+    state = {
+        query: '',
+        suggestions: [],
+    }
+
+    handleInputChanged = (event) => {
+        const value = event.target.value;
+        const suggestions = this.props.locations.filter((location) => {
+            return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
+        });
+        this.setState({
+            query: value,
+            suggestions,
+        });
+    };
+
+
+    render() {
+        return (
+            <div className="CitySearch">
+                <input
+                    type="text"
+                    className="city"
+                    value={this.state.query}
+                    onChange={this.handleInputChanged}
+                />
+                <ul className="suggestions">
+                </ul>
+            </div>
+        );
+    }
+}
+
+export default CitySearch;
