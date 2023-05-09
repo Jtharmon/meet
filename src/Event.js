@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
 class Event extends Component {
-    render() {
-        return <div></div>;
-    }
-
     state = {
         showDetails: false,
     }
@@ -33,7 +29,7 @@ class Event extends Component {
                         </a>
                     </div>
                 )}
-                <button className="details-btn" onClick={this.handleShowDetails}>
+                <button className="detailsButton" onClick={this.handleShowDetails}>
                     {showDetails ? 'Hide details' : 'Show details'}
                 </button>
             </div>

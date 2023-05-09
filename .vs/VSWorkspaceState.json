@@ -1,11 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\auth-server",
-    "\\public",
     "\\src",
-    "\\src\\__tests__",
-    "\\static-site-test"
+    "\\src\\__tests__"
   ],
+  "SelectedNode": "\\src\\__tests__\\App.test.js",
   "PreviewInSolutionExplorer": false
 }

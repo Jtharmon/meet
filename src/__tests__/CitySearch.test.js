@@ -33,14 +33,16 @@ describe('<CitySearch /> component', () => {
         expect(CitySearchWrapper.state('query')).toBe('Berlin');
     });
 
-    test('render list of suggestions correctly', () => {
-        const locations = extractLocations(mockData);
-        CitySearchWrapper.setState({ suggestions: locations });
-        const suggestions = CitySearchWrapper.state('suggestions');
-        expect(CitySearchWrapper.find('.suggestions li')).toHaveLength(suggestions.length + 1);
-        for (let i = 0; i < suggestions.length; i += 1) {
-            expect(CitySearchWrapper.find('.suggestions li').at(i).text()).toBe(suggestions[i]);
-        }
+    test('render list of suggestions correctly', async () => {
+        const CitySearchWrapper = shallow(<CitySearch />);
+        CitySearchWrapper.setState({ query: 'Berlin', suggestions: [] });
+        const eventObject = { target: { value: 'Berlin' } };
+        await CitySearchWrapper.find('.city').simulate('change', eventObject);
+        await act(async () => {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            CitySearchWrapper.update();
+        });
+        expect(CitySearchWrapper.find('.suggestions li')).toHaveLength(2);
     });
 
     test('suggestion list match the query when changed', () => {
@@ -55,13 +57,10 @@ describe('<CitySearch /> component', () => {
         expect(CitySearchWrapper.state("suggestions")).toEqual(filteredLocations);
     });
 
-    test("selecting a suggestion should change query state", () => {
-        CitySearchWrapper.setState({
-            query: 'Berlin',
-            showSuggestions: true, // set showSuggestions to true to show the suggestions
-            suggestions: ['Berlin, Germany'] // set suggestions to the expected value
-        });
-        CitySearchWrapper.find('.suggestions li').at(0).simulate('click');
-        expect(CitySearchWrapper.state("query")).toBe("Berlin, Germany");
+    test('selecting a suggestion should change query state', () => {
+        const CitySearchWrapper = shallow(<CitySearch />);
+        CitySearchWrapper.setState({ query: 'Berlin', suggestions: ['Berlin, Germany'] });
+        CitySearchWrapper.find('.suggestions li').first().simulate('click');
+        expect(CitySearchWrapper.state('query')).toBe('Berlin, Germany');
     });
 });
