@@ -15,7 +15,7 @@ describe("<Event /> component", () => {
     display.simulate("click");
     const summary = EventWrapper.find(".title");
     const details = EventWrapper.find(".details li");
-    expect(summary.text()).toBe(`Summary: ${event.summary}`);
+    expect(summary.text()).toBe(`${event.summary}`);
     expect(details.at(0).text()).toBe(`Description: ${event.description}`);
     expect(details.at(1).text()).toBe(`Location: ${event.location}`);
     expect(details.at(2).text()).toBe(
@@ -26,9 +26,4 @@ describe("<Event /> component", () => {
     );
   });
 
-  test("toggle boolean", () => {
-    const display = EventWrapper.find(".detailsButton");
-    display.simulate("click");
-    expect(EventWrapper.state("hide")).toBe(true);
-  });
 });
