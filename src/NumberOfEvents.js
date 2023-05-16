@@ -31,13 +31,11 @@ class NumberOfEvents extends Component {
             <div className='NumberOfEvents'>
                 <input
                     type='number'
-                    className='NumberOfEvents'
                     min={1}
                     max={32}
                     value={this.state.query}
                     onChange={this.handleInputChanged}
                 />
-                <ErrorAlert className='errorMessage' text={this.state.errorText} />
             </div>
         );
     }
