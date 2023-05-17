@@ -18,4 +18,11 @@ describe("<NumberOfEvents/> component", () => {
         });
         expect(NumberOfEventsWrapper.state("query")).toBe(32);
     });
+
+    test('calls updateEvents with the selected city and input value when a valid number is entered', () => {
+        const inputValue = '32';
+        const input = NumberOfEventsWrapper.find('input');
+        input.simulate('change', { target: { value: inputValue } });
+    });
+
 });

@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\__tests__"
+    "\\src\\__tests__",
+    "\\static-site-test"
   ],
-  "SelectedNode": "\\src\\App.js",
   "PreviewInSolutionExplorer": false
 }
