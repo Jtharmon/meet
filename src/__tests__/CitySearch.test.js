@@ -8,7 +8,7 @@ describe('<CitySearch /> component', () => {
     let locations, CitySearchWrapper;
     beforeAll(() => {
         locations = extractLocations(mockData);
-        CitySearchWrapper = shallow(<CitySearch locations={locations} />);
+        CitySearchWrapper = shallow(<CitySearch locations={locations} updateEvents={() => { }} />);
     });
 
     test('render text input', () => {
@@ -37,10 +37,6 @@ describe('<CitySearch /> component', () => {
         CitySearchWrapper.setState({ query: 'Berlin', suggestions: [] });
         const eventObject = { target: { value: 'Berlin' } };
         await CitySearchWrapper.find('.city').simulate('change', eventObject);
-        //await act(async () => {
-            //await new Promise(resolve => setTimeout(resolve, 1000));
-            //CitySearchWrapper.update();
-        //});
         expect(CitySearchWrapper.find('.suggestions li')).toHaveLength(2);
     });
 
