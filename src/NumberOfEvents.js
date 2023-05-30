@@ -16,7 +16,6 @@ class NumberOfEvents extends Component {
                 query: value,
                 errorText: "",
             });
-            this.props.updateEvents(this.props.selectedCity, value);
         }
         if (value < 1 || value > 32) {
             this.setState({
@@ -29,7 +28,7 @@ class NumberOfEvents extends Component {
     render() {
         return (
             <div className='NumberOfEvents'>
-                <input
+                <input className='number-of-events-input'
                     type='number'
                     min={1}
                     max={32}

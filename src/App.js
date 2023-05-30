@@ -33,7 +33,7 @@ class App extends Component {
     }
 
     updateEvents = (location, eventCount) => {
-        const { selectedLocation, numberOfEvents } = this.state;
+        const { numberOfEvents } = this.state;
         const count = eventCount || numberOfEvents;
 
         getEvents().then((events) => {
@@ -57,6 +57,7 @@ class App extends Component {
                 <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
                 <EventList events={this.state.events} />
                 <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
+                <showHideanEventDetails showHideanEventDetails={this.state.showHideanEventDetails} />
             </div>
         );
     }
