@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { InfoAlert } from './Alert';
 
 class NumberOfEvents extends Component {
     constructor() {
