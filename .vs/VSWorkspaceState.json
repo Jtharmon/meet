@@ -1,10 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\features",
-    "\\src\\__tests__"
+    "\\auth-server",
+    "\\public",
+    "\\src"
   ],
-  "SelectedNode": "\\src\\index.js",
+  "SelectedNode": "\\public\\index.html",
   "PreviewInSolutionExplorer": false
 }

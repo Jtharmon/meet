@@ -52,6 +52,8 @@
     ]
   },
   "devDependencies": {
+    "@types/react": "^18.2.8",
+    "@types/react-dom": "^18.2.4",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.8.0",
     "enzyme": "^3.11.0",
     "gh-pages": "^5.0.0",
